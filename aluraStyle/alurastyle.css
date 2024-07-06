@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* ////////////////// */
+
+:root {
+    --dark-blue-400: #052051;
+    --dark-blue-300: #0A3871;
+    --light-blue-100: #F3F5FC;
+
+    --gray-100: #CED4DA;
+    --gray-200: #ADB5BD;
+    --gray-500: #868E96;
+
+    --white: #ffffff;
+}
+
+*{
+    overflow-y: hidden;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+}
+
+header {
+    width: 100%;
+    background-color: var(--light-blue-100);
+}
+
+header:hover{
+    background-color: var(--gray-200);
+    transition: 0.5s;
+}
+
+.logoAlura {
+    width: 4rem;
+    margin: 0.5rem 0;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+
+.header nav a{
+    height: 1.25rem;
+    margin: 1rem;
+    margin-left: 0;
+    text-decoration: none;
+    color: var(--dark-blue-400);
+}
+
+.active-a{
+    font-weight: bold;
+}
+
+header nav a:hover{
+    color: var(--light-blue-100);
+}
+
+.parent {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.encripter {
+    display: flex;
+    margin: 2rem;
+    height: 34rem;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.encripter-input{
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.encripter-input aside{
+    height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.encripter-input textarea {
+    height: 100%;
+    margin: 0.25rem;
+    font-size: large;
+    text-align: center;
+    font-family: "Inter", sans-serif; 
+    border: none;
+    border-radius: 1rem;
+    color: var(--dark-blue-300);
+    overflow-y: auto;
+}
+
+.encripter-input textarea:focus-visible {
+    outline:var(--dark-blue-400) 1px solid;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    width: 22rem;
+    height: 50px;
+    margin: 01rem;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    border: solid 1px var(--dark-blue-300);
+    border-radius: 2rem;
+
+    color: var(--dark-blue-300);
+}
+
+.button-active{
+    background-color: var(--dark-blue-400);
+    color: white;
+}
+
+.button-active:hover{
+    background-color: var(--dark-blue-300);
+    color: var(--gray-100);
+}
+
+.result {
+    display: flex;
+    height: 34rem;
+    margin: 2rem 0;
+    margin-right: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-blue-100);
+    border-radius: 1rem;
+    overflow-x:hidden;
+}
+
+.default-result img{
+    max-width: 100%;
+    height: auto;
+}
+
+.content-result:hover{
+    background-color: var(--gray-500);
+}
+
+.content-result {
+    display: flex;
+    width: 30%;
+    height: auto;
+    flex-direction: column;
+}
+
+.text-result{
+    text-align: center;
+    color: var(--dark-blue-400);
+}
+
+.infomation-result{
+    text-align: center;
+}
+
+.infomation-result p{
+    margin: 0 1rem;
+}
+
+.result h2{
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+
+    .parent {
+        width: auto;
+        flex-direction: column;
+    }
+
+    .encripter {
+        height: 28rem;
+        margin: 1rem;
+    }
+    
+    .result {
+        height: auto;
+        margin: 1rem 2rem;
+    }
+
+    .result img{
+        display:none;
+    }
+}
+
+@media (max-width: 600px) {
+    .parent {
+        flex-direction: column;
+    }
+
+    .encripter {
+        margin: 1rem;
+        height: 24rem;
+    }
+
+    .encripter input:focus-visible {
+        outline:var(--dark-blue-400) 1px solid;
+    }
+    
+    .result {
+        width: auto;
+        height: auto;
+        margin: 1rem 2rem;
+    }
+
+    .result img{
+        display:none;
+    }
+}
+
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
